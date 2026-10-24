@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Policies | Online Cyber Cafe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-indigo: #4F46E5;
+            --primary-gradient: linear-gradient(135deg, #1E1B4B 0%, #312E81 50%, #4338CA 100%);
+            --royal-indigo: #3730A3;
+            --primary-light: #EEF2FF;
+            --saffron-gold: #D97706;
+            --saffron-light: #FEF3C7;
+            --indian-teal: #059669;
+            --teal-light: #E6FFFA;
+            --action-red: #DC2626;
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --bg-body: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --border: #E2E8F0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 6px 12px -2px rgba(0,0,0,0.08), 0 3px 6px -2px rgba(0,0,0,0.04);
+            --shadow-glow: 0 10px 25px -5px rgba(67, 56, 202, 0.25);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Glassmorphic Navbar (App Dark Indigo Palette) */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        .brand-logo {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            border-radius: 8px;
+        }
+
+        .brand-title {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #FFFFFF, #CBD5E1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 920px;
+            margin: 28px auto 0;
+            padding: 0 20px;
+        }
+
+        /* Hero Banner (App Royal Indigo Theme) */
+        .hero-banner {
+            background: var(--primary-gradient);
+            border-radius: var(--radius-lg);
+            padding: 28px 32px;
+            color: #FFFFFF;
+            box-shadow: var(--shadow-glow);
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-logo-box {
+            width: 68px;
+            height: 68px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            flex-shrink: 0;
+        }
+
+        .hero-logo-img {
+            width: 50px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .hero-title {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 13px;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* Effective Date Badge Box */
+        .effective-date-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(254, 243, 199, 0.2);
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            color: #FEF08A;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12sp;
+            font-size: 12px;
+            font-weight: 800;
+            margin-top: 10px;
+        }
+
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        /* 4 Main Combined Modern Tabs Navigation */
+        .main-tabs-wrapper {
+            background: #FFFFFF;
+            padding: 6px;
+            border-radius: 28px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 24px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+        }
+
+        .main-tab {
+            padding: 12px 10px;
+            border-radius: 22px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: 1px solid transparent;
+        }
+
+        .main-tab:hover {
+            color: var(--primary-indigo);
+            background: var(--primary-light);
+        }
+
+        .main-tab.active {
+            background: var(--primary-gradient);
+            color: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(55, 48, 163, 0.35);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        .main-tab .tab-icon-svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        /* Tab Panels (Content Container) */
+        .tab-panel {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Content Card Styling */
+        .content-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .card-header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .card-header-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--primary-light);
+            color: var(--primary-indigo);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-header-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        .card-header-titles h2 {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        .card-header-titles p {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .pill-badge {
+            background: var(--primary-light);
+            color: var(--primary-indigo);
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid #C7D2FE;
+        }
+
+        /* Sub Section Box */
+        .sub-box {
+            background: #F8FAFC;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 18px 20px;
+            margin-bottom: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .sub-box:hover {
+            border-color: #C7D2FE;
+            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.05);
+        }
+
+        .sub-box:last-child {
+            margin-bottom: 0;
+        }
+
+        .sub-box h3 {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--primary-indigo);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sub-box p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        /* Formula & Calculation Box */
+        .formula-box {
+            background: #EEF2FF;
+            border-left: 4px solid var(--primary-indigo);
+            padding: 14px 16px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 10px 0;
+            font-size: 12.5px;
+            color: var(--royal-indigo);
+            font-weight: 600;
+        }
+
+        /* Search Bar for FAQs */
+        .faq-search-box {
+            position: relative;
+            margin-bottom: 18px;
+        }
+
+        .faq-search-input {
+            width: 100%;
+            padding: 12px 16px 12px 42px;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            font-size: 13.5px;
+            font-family: inherit;
+            background: #F8FAFC;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .faq-search-input:focus {
+            background: #FFFFFF;
+            border-color: var(--primary-indigo);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+        }
+
+        .search-icon-svg {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            fill: var(--text-muted);
+        }
+
+        /* FAQ Accordion Styling */
+        .faq-accordion {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            margin-bottom: 10px;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .faq-accordion:hover {
+            border-color: #C7D2FE;
+        }
+
+        .faq-question {
+            padding: 16px 20px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 20px 16px 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            border-top: 1px solid #F1F5F9;
+            padding-top: 12px;
+            white-space: pre-line;
+        }
+
+        .faq-accordion.open .faq-answer {
+            display: block;
+        }
+
+        .faq-accordion.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-chevron-svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--text-muted);
+            transition: transform 0.25s ease;
+        }
+
+        /* Footer Box */
+        .helpdesk-box {
+            background: linear-gradient(135deg, #1E293B, #0F172A);
+            border-radius: var(--radius-lg);
+            padding: 24px 28px;
+            color: #FFFFFF;
+            margin-top: 24px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .helpdesk-text h3 {
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .helpdesk-text p {
+            font-size: 12.5px;
+            opacity: 0.85;
+        }
+
+        .contact-btn {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-btn:hover {
+            background: #FFFFFF;
+            color: var(--text-main);
+        }
+
+        @media (max-width: 768px) {
+            .main-tabs-wrapper {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-banner {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+            }
+            .helpdesk-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav class="navbar">
+        <a href="#" class="brand">
+            <img src="https://firebasestorage.googleapis.com/v0/b/online-cyber-cafe.appspot.com/o/logo.png?alt=media&amp;token=e58fbfbe-f262-483e-a2f3-8ea7a0f44204" alt="Online Cyber Cafe Logo" class="brand-logo">
+            <span class="brand-title">Online Cyber Cafe</span>
+        </a>
+        <button class="lang-btn" id="langToggleBtn" onclick="toggleLanguage()">
+            🌐 <span id="langBtnText">हिंदी</span>
+        </button>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Hero Trust Banner -->
+        <div class="hero-banner">
+            <div class="hero-logo-box">
+                <img src="https://firebasestorage.googleapis.com/v0/b/online-cyber-cafe.appspot.com/o/logo.png?alt=media&amp;token=e58fbfbe-f262-483e-a2f3-8ea7a0f44204" alt="Logo" class="hero-logo-img">
+            </div>
+            <div class="hero-text-content">
+                <h1 class="hero-title" id="heroTitle">Legal Trust &amp; Transparent Policies</h1>
+                <p class="hero-subtitle" id="heroSubtitle">Online Cyber Cafe ensures 256-bit encrypted data protection, transparent digital processing, and clear refund &amp; cancellation rules.</p>
+
+                <!-- Effective Date Callout Tag -->
+                <div class="effective-date-tag" id="effectiveDateTag">
+                    📅 Effective Date: 8th November, 2026 (Deepawali) | Version 1.0.0
+                </div>
+
+                <div class="trust-badges">
+                    <span class="badge" id="badge1">🔒 256-Bit Encrypted</span>
+                    <span class="badge" id="badge2">⚡ Standard 12-Hr Rules</span>
+                    <span class="badge" id="badge3">🛡️ Authorised Facilitator</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 Main Combined Tabs Navigation -->
+        <div class="main-tabs-wrapper">
+            <div class="main-tab active" onclick="switchTab(0)" id="mainTab0">
+                <svg class="tab-icon-svg" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                <span id="tabLabel0">Terms &amp; Guidelines</span>
+            </div>
+            <div class="main-tab" onclick="switchTab(1)" id="mainTab1">
+                <svg class="tab-icon-svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8Secondaryz"/></svg>
+                <span id="tabLabel1">Privacy &amp; Security</span>
+            </div>
+            <div class="main-tab" onclick="switchTab(2)" id="mainTab2">
+                <svg class="tab-icon-svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                <span id="tabLabel2">Refund &amp; Cancellation</span>
+            </div>
+            <div class="main-tab" onclick="switchTab(3)" id="mainTab3">
+                <svg class="tab-icon-svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                <span id="tabLabel3">FAQs &amp; Help Desk</span>
+            </div>
+        </div>
+
+        <!-- TAB PANEL 1: TERMS & GUIDELINES -->
+        <div class="tab-panel active" id="panel0">
+            <div class="content-card">
+                <div class="card-header-bar">
+                    <div class="card-header-left">
+                        <div class="card-header-icon">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                        </div>
+                        <div class="card-header-titles">
+                            <h2 id="tHead">Terms of Service &amp; Guidelines</h2>
+                            <p id="tSub">Rules, service scope, user responsibilities, document standards &amp; legal jurisdiction</p>
+                        </div>
+                    </div>
+                    <span class="pill-badge" id="tBadge">Official Rules</span>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="tTitle1">📜 Acceptance of Terms, Age Eligibility &amp; Usage</h3>
+                    <p id="tBody1">By accessing or using the Online Cyber Cafe mobile application, you agree to comply with and be bound by these service terms. Users must be at least 13 years of age. All users who are minors (under 18) must have direct permission and supervision from a parent or legal guardian to use our services.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="tTitle2">📑 Scope of Digital Facilitation Services</h3>
+                    <p id="tBody2">We apply and file applications on official destination or third-party portals based on user requests. Once submitted, all subsequent tasks, background verification, processing, and decision procedures are handled by the respective authorities.
+
+• Active Available Services:
+  - PAN Card creation & corrections
+  - Aadhaar details & mobile link appointment booking
+  - Income, Caste, Domicile & EWS Certificates
+  - Voter ID, Driving License & HSRP Plate applications
+  - EPFO / PF balance, KYC & withdrawal form filing
+  - Train, Flight, Bus bookings & Traffic Challans
+  - School/College, IGNOU, NIOS & Job Application submission</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="tTitle3">👤 User Responsibilities, Passwords &amp; Verification</h3>
+                    <p id="tBody3">• Credentials Security: Users agree to keep login passwords and passcodes confidential and are solely responsible for all account activity.
+• Data Correctness: Online Cyber Cafe has no administrative method, database access, or legal authority to verify or validate personal user data. Users are requested to provide accurate, truthful details and documents.
+• Input Forwarding: We collect user inputs and forward/upload them to the related portal or authority for next steps.
+• Zero Tolerance for Fraud: Submitting fake, altered, or fraudulent data will lead to immediate account suspension and application cancellation without refund.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="tTitle4">🏷️ Pricing Errors &amp; Order Refusal Right</h3>
+                    <p id="tBody4">We reserve the right to correct pricing errors, typographical mistakes, or billing glitches even after payment is received, and reserve the right to refuse or cancel suspicious orders placed through the app.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="tTitle5">📱 App Store &amp; Google Play License Terms</h3>
+                    <p id="tBody5">Granted a revocable, non-exclusive license to install and use the app on mobile devices strictly in accordance with Google Play & Apple App Store distributor terms. Users represent they are not in embargoed countries or prohibited lists.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="tTitle6">🏛️ Authority &amp; Portal Approval Disclaimer</h3>
+                    <p id="tBody6">Online Cyber Cafe is an independent technology facilitation platform. Application acceptance, rejection, processing timelines, and final approvals depend entirely on the respective authority or portal related to the user's filed application.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="tTitle7">⚖️ Intellectual Property, Anti-Scraping &amp; Legal Action</h3>
+                    <p id="tBody7">All app logos, UI designs, brand assets, source code, and trademarks belong exclusively to Bharatiya Innovators. Any unauthorized copying, reverse engineering, scraping, automated bot submission, or misuse will subject violators to civil and criminal legal action under applicable laws.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="tTitle8">📄 Document Upload Quality Standards</h3>
+                    <p id="tBody8">• Accepted Formats: JPEG, PNG, or PDF files up to 5MB per attachment.
+• Clarity: Scans or photos must be well-lit, uncropped, with all four corners visible.
+• Unencrypted Files: PDF files must be unencrypted or password provided in order notes.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="tTitle9">📞 Verification Agent Call Protocol</h3>
+                    <p id="tBody9">Our support agent connects with you on your mobile phone during your chosen call time slot (e.g. Morning 10 AM - 2 PM or Afternoon 2 PM - 6 PM) to verify details and complete official portal form filling.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="tTitle10">✍️ Electronic Communications, Contracts &amp; Signatures</h3>
+                    <p id="tBody10">Visiting the app, sending emails, and completing online forms constitute electronic communications. Users consent to receive electronic disclosures and agree that orders, contracts, and electronic signatures satisfy all legal requirements for written notice.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="tTitle11">📊 Live Application Updates &amp; Push Alerts</h3>
+                    <p id="tBody11">Users receive application status updates filed internally by our agents within our app. Official portal status and acknowledgement updates are provided directly by respective portals.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="tTitle12">🏢 Corporate Entity &amp; Legal Jurisdiction</h3>
+                    <p id="tBody12">• Operating Entity: Bharatiya Innovators (formerly New Gen CyberCafe)
+• Digital Platform: Online Cyber Cafe Digital Services
+• Registered Location: Ghaziabad, Uttar Pradesh, India
+• Governing Law: Governed by the laws of India; courts of Ghaziabad, Uttar Pradesh shall have exclusive jurisdiction over any legal disputes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB PANEL 2: PRIVACY & SECURITY -->
+        <div class="tab-panel" id="panel1">
+            <div class="content-card">
+                <div class="card-header-bar">
+                    <div class="card-header-left">
+                        <div class="card-header-icon">
+                            <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                        </div>
+                        <div class="card-header-titles">
+                            <h2 id="pHead">Privacy Policy &amp; Data Security</h2>
+                            <p id="pSub">256-bit encryption, data storage, auto-deletion &amp; privacy controls</p>
+                        </div>
+                    </div>
+                    <span class="pill-badge" id="pBadge">256-Bit Encrypted</span>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="pTitle0">👋 Welcome &amp; Scope of Privacy Policy</h3>
+                    <p id="pBody0">Welcome to Online Cyber Cafe ("App", "we", "us", or "our"), developed and operated by Bharatiya Innovators. We value your privacy and aim to be completely transparent about how information is handled when you use our Android application. This Privacy Policy describes our stated data-handling practices, app permissions used, and the controls available to you.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="pTitle1">📥 Information Collection</h3>
+                    <p id="pBody1">We collect personal information that you disclose to us including Name, Mobile Number, Email, Delivery Address, Date of Birth, Gender, Aadhaar/PAN details, scanned ID documents, photo files, and transaction IDs exclusively for filing your requested applications.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="pTitle2">💻 Technical &amp; Device Data Automatically Collected</h3>
+                    <p id="pBody2">Device IP address, browser/device model, operating system, system crash logs, and FCM push notification tokens are automatically recorded in log files for app diagnostics, security, and performance.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="pTitle3">🔐 256-Bit AES Encryption &amp; Cloud Security</h3>
+                    <p id="pBody3">• Built-in Bank-Grade Security: Our cloud infrastructure (Firebase Cloud Storage & Firestore) automatically encrypts all stored user data at rest using bank-grade AES-256 encryption and TLS/SSL in transit.
+• Authorized Access Only: Access is strictly restricted to authorized application processing specialists.
+• Zero Raw Card Storage: All payment card/UPI transactions are processed directly by certified payment gateways with zero raw card data stored on our servers.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="pTitle4">🛡️ Non-Disclosure &amp; Privacy Commitment</h3>
+                    <p id="pBody4">We NEVER sell, rent, trade, or share your personal data with third-party advertisers or marketing agencies. Information is transmitted solely to official destination portals (UIDAI, NSDL, e-District, Parivahan, etc.). In the event of a merger, asset sale, or corporate transfer, information may be transferred under strict privacy terms.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="pTitle5">⏱️ Automatic 3-Month Document Deletion &amp; Extended Retention</h3>
+                    <p id="pBody5">Due to official authority portal timelines (which can sometimes exceed 90 days), application records and uploaded files are retained during active processing and archived to allow receipt re-downloading. All attached files and scanned documents are automatically deleted after 3 months. Essential financial logs are maintained up to 12 months for tax and legal compliance.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="pTitle6">✋ User Privacy Control &amp; Account Deletion</h3>
+                    <p id="pBody6">You can request profile updates or account data removal/termination anytime by contacting our support desk at bhartiyainnovators@gmail.com.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB PANEL 3: REFUND & CANCELLATION -->
+        <div class="tab-panel" id="panel2">
+            <div class="content-card">
+                <div class="card-header-bar">
+                    <div class="card-header-left">
+                        <div class="card-header-icon">
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                        </div>
+                        <div class="card-header-titles">
+                            <h2 id="rHead">Refund &amp; Cancellation Policy</h2>
+                            <p id="rSub">12-hour eligibility window, deduction formulas &amp; gateway terms</p>
+                        </div>
+                    </div>
+                    <span class="pill-badge" id="rBadge">12-Hr Window</span>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="rTitle1">🕒 12-Hour Cancellation Eligibility Window</h3>
+                    <p id="rBody1">Standard (Normal) Application cancellation is eligible "before 12 hours from purchase OR before our agent's 1st call attempt, whichever is earlier."</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="rTitle2">📊 Pre-Filing / 1st Agent Call Attempt Deduction</h3>
+                    <div class="formula-box" id="rFormula1">Formula: 25% of application fee OR ₹30, whichever is HIGHER.</div>
+                    <p id="rBody2">• Example 1 (₹100 Application Fee): 25% of ₹100 is ₹25, but ₹30 is higher, so ₹30 is deducted and ₹70 is refunded.
+• Example 2 (₹200 Application Fee): 25% of ₹200 is ₹50 (which is higher than ₹30), so ₹50 is deducted and ₹150 is refunded.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="rTitle3">📞 2nd Agent Call Attempt Deduction</h3>
+                    <div class="formula-box" id="rFormula2">Formula: 50% of application fee OR ₹40, whichever is HIGHER.</div>
+                    <p id="rBody3">• Example (₹100 Application Fee): 50% of ₹100 is ₹50 (higher than ₹40), so ₹50 is deducted and ₹50 is refunded.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="rTitle4">🚫 Post-Filing Policy (After Application Uploaded to Portal)</h3>
+                    <p id="rBody4">Once an application has been processed and submitted to official destination, entrance exam, or university servers, official organization fees become non-refundable (100% deduction - 0% refund) as official servers do not issue reversals.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="rTitle5">💳 Payment Gateway Processing Fee (Non-Refundable)</h3>
+                    <p id="rBody5">An additional payment processing charge starting at 2.5% (or higher depending on payment gateway/method) is added to each transaction. This fee is strictly non-refundable under any circumstances, even if an application is cancelled or refunded.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="rTitle6">⚡ Instant Applications (Non-Refundable)</h3>
+                    <p id="rBody6">Instant applications align dedicated processing agents immediately on an urgent basis. This incurs higher operational cost and leads to 100% NO REFUND once purchase is completed.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="rTitle7">🔄 Application Re-filing Policy</h3>
+                    <p id="rBody7">If an application needs re-filing, a new application form must be submitted. Users can request a fee waiver or discount by emailing support, subject to operational review.</p>
+                </div>
+
+                <div class="sub-box">
+                    <h3 id="rTitle8">💳 Refund Timelines &amp; Processing</h3>
+                    <p id="rBody8">We initiate refunds within 12 to 24 working hours after applying cancellation fee deductions. Final credit reflection in your account may take longer due to bank servers or payment gateway processing.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB PANEL 4: FAQS & HELP DESK -->
+        <div class="tab-panel" id="panel3">
+            <div class="content-card">
+                <div class="card-header-bar">
+                    <div class="card-header-left">
+                        <div class="card-header-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                        </div>
+                        <div class="card-header-titles">
+                            <h2 id="fHead">Frequently Asked Questions</h2>
+                            <p id="fSub">Complete answers to all 23+ service, payment, document &amp; verification queries</p>
+                        </div>
+                    </div>
+                    <span class="pill-badge" id="fBadge">23+ Q&amp;A</span>
+                </div>
+
+                <!-- Search Input Bar -->
+                <div class="faq-search-box">
+                    <svg class="search-icon-svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    <input type="text" class="faq-search-input" id="faqSearchInput" placeholder="Search 23+ questions (e.g. refund, Aadhaar, OTP, fee, PAN, call)..." onkeyup="filterFaqs()">
+                </div>
+
+                <!-- ALL 23 FAQS FROM APP -->
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ1">❓ 1. What happens if I miss calls from your verification agent?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA1">Our verification agent will contact your mobile number during your selected time slot to verify details and complete application filing. If you miss a call or need assistance, you can request a callback anytime from the Support & Help section.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ2">📊 2. How do I cancel my normal application and what is the 12-hour refund policy?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA2">For Normal Applications, you can initiate a cancellation by contacting our support team within 12 hours from purchase. Upon approval, 25% of application fees or ₹30 (whichever is bigger) is deducted, and the remaining balance plus platform fees are refunded within 12 to 24 hours.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ3">📞 3. Is an agent confirmation call mandatory for application cancellation?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA3">No, a confirmation call from an agent is not mandatory if the cancellation was initiated directly by you. When you submit a cancellation request, it is processed directly based on your request (subject to the 12-hour window and cancellation policy).</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ4">⚡ 4. What is the refund policy for Instant Applications?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA4">For all Instant Applications, NO REFUNDS will be issued under any circumstances once purchase is completed. All instant purchases are final due to immediate dedicated agent allocation.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ5">⏱️ 5. How quickly are approved refunds processed?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA5">Approved cancellation refunds are processed within 12 to 24 hours of filing your request. Credit reflection in your bank account depends on your payment provider.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ6">📝 6. How do I request an application cancellation right now?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA6">Contact our support team within 12 hours by submitting a 'Request a Call Back' in the app or emailing our support desk at bhartiyainnovators@gmail.com.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ7">🔐 7. Why am I asked to share OTPs during form filling?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA7">Official service portals (e.g. Aadhaar, PAN, Voter ID, Exam portals) issue official OTPs to verify your identity. You must provide these OTPs to our agent to complete filing.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ8">🛡️ 8. Is it safe to share OTPs and will there be an in-app OTP feature?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA8">Our agents only ask for official portal OTPs needed for your application. An in-app Secure OTP Submission feature will be launched soon so OTPs reach the correct destination securely without phone calls.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ9">📱 9. How do I track my application status in real-time?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA9">Open the 'Applications' tab in the app. Each application displays its current stage (Submitted, In Verification, Completed, Action Required) along with PID details and live updates.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ10">💳 10. Are there transaction processing fees on payments and are they refundable?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA10">An additional payment processing charge starting at 2.5% is added to each payment to cover gateway processing. This processing fee is strictly NON-REFUNDABLE under any circumstances.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ11">🏧 11. What payment methods and cards are accepted on Online Cyber Cafe?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA11">We accept all major INR payment modes including Visa, Mastercard, American Express, Discover, UPI (Google Pay, PhonePe, Paytm, BHIM), Net Banking across all Indian banks, and digital wallets.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ12">🏷️ 12. What are the service filing charges on Online Cyber Cafe?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA12">Our professional service filing charges start at just ₹49 per application (excluding official department, university, or ticket fees).</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ13">🧮 13. How does the cancellation charge calculation work (25% vs ₹30)?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA13">When you cancel a Normal Application within 12 hours, 25% of application fees or ₹30 (whichever is bigger) is deducted to cover processing costs. The remaining balance plus platform fees are refunded.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ14">⚠️ 14. What happens if my payment fails but money was debited?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA14">Failed payments are automatically detected by our payment gateway and refunded to your original bank account within 3-5 business days. You can also view transaction receipts under Profile.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ15">🏛️ 15. Are official department/organization fees refundable?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA15">Once an application has been processed and submitted to official department, entrance exam, or university servers, official organization fees become non-refundable as official servers do not issue reversals.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ16">📄 16. What documents do I need to attach and how do I upload them?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA16">Attach required documents for your specific application (e.g. Aadhaar Card for address proof, Voter/PAN for ID proof, Passport photo for job forms, Marksheets for admissions). Capture photos or select JPEG, PNG, or PDF files (up to 5MB) from your gallery.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ17">⏱️ 17. How long are my uploaded documents stored and can I delete them?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA17">Attached documents are automatically deleted after 3 months (or upon completion of application processing). A manual 'Delete Attached File' feature will also be available soon.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ18">🔒 18. Why do you collect my personal data and how is it used?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA18">We collect details and attached documents solely for filling your official application forms on your behalf and sending real-time status updates. Your data is 256-bit AES encrypted and never shared for marketing.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ19">🆕 19. What new document services can I file for ₹49?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA19">You can apply for New PAN Card, New Driving License, Passport, Book Aadhaar Appointment, Ration Card, etc. for a service charge starting @ ₹49 (Official fee excluded).</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ20">✏️ 20. What document update services are available?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA20">We offer PAN Card Updates, Aadhaar Correction Appointments, and Ration Card updates starting @ ₹49 service charge (Official fee excluded).</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ21">🚆 21. What ticket booking services are available on the app?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA21">Book Train Tickets (1AC, 2AC, 3A, SL, 2S, CC, UR, Jan Shatabdi), Flight Tickets (Economy, Business), and Bus Tickets starting @ ₹49 service charge (Ticket fee excluded).</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ22">🎓 22. Can I apply for Job Vacancies, Entrance Exams &amp; IGNOU/NIOS Admissions?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA22">Yes! Apply for SSC, CGL, UPSC, Public/Private Job Vacancies, School/College Admissions, Entrance Exams, IGNOU/NIOS Admissions, Online Traffic Challans, Vehicle HSRP Number Plates, EPFO (PF), and Char Dham Yatra Registrations starting @ ₹49.</div>
+                </div>
+
+                <div class="faq-accordion" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span id="fqQ23">📞 23. Why is Call Back support experiencing delays?</span>
+                        <svg class="faq-chevron-svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer" id="fqA23">Due to high call volume, Call Back support is experiencing heavy load. Our agents connect with you in your selected time slot. For urgent queries, email bhartiyainnovators@gmail.com within 12 hours.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Helpdesk Footer Box -->
+        <div class="helpdesk-box">
+            <div class="helpdesk-text">
+                <h3 id="footHead">🎧 Have questions about our policies?</h3>
+                <p id="footSub">Our support desk is available Mon - Sat (9 AM - 8 PM IST) to assist you with any policy or refund queries.</p>
+            </div>
+            <a href="mailto:bhartiyainnovators@gmail.com" class="contact-btn">✉️ Contact Support Desk</a>
+        </div>
+
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        let isHindi = false;
+
+        function switchTab(index) {
+            document.querySelectorAll('.main-tab').forEach((t, i) => {
+                if(i === index) t.classList.add('active');
+                else t.classList.remove('active');
+            });
+
+            document.querySelectorAll('.tab-panel').forEach((p, i) => {
+                if(i === index) p.classList.add('active');
+                else p.classList.remove('active');
+            });
+        }
+
+        function toggleFaq(element) {
+            element.classList.toggle('open');
+        }
+
+        function filterFaqs() {
+            const query = document.getElementById('faqSearchInput').value.toLowerCase();
+            document.querySelectorAll('.faq-accordion').forEach(acc => {
+                const text = acc.innerText.toLowerCase();
+                if(text.includes(query)) {
+                    acc.style.display = 'block';
+                } else {
+                    acc.style.display = 'none';
+                }
+            });
+        }
+
+        function toggleLanguage() {
+            isHindi = !isHindi;
+            document.getElementById('langBtnText').innerText = isHindi ? 'English' : 'हिंदी';
+
+            if (isHindi) {
+                // HINDI TRANSLATION DICTIONARY
+                document.getElementById('heroTitle').innerText = 'कानूनी विश्वास एवं पारदर्शी नीतियां';
+                document.getElementById('heroSubtitle').innerText = 'ऑनलाइन साइबर कैफे 256-बिट सुरक्षित डेटा सुरक्षा, पारदर्शी प्रक्रिया और स्पष्ट रिफंड नियम सुनिश्चित करता है।';
+                document.getElementById('effectiveDateTag').innerText = '📅 प्रभावी तिथि: 8 नवंबर, 2026 (दीपावली) | संस्करण 1.0.0';
+                document.getElementById('badge1').innerText = '🔒 256-बिट एन्क्रिप्टेड';
+                document.getElementById('badge2').innerText = '⚡ मानक 12 घंटे के नियम';
+                document.getElementById('badge3').innerText = '🛡️ अधिकृत सुविधा केंद्र';
+
+                document.getElementById('tabLabel0').innerText = 'शर्तें व दिशा-निर्देश';
+                document.getElementById('tabLabel1').innerText = 'गोपनीयता व सुरक्षा';
+                document.getElementById('tabLabel2').innerText = 'रिफंड व रद्दीकरण';
+                document.getElementById('tabLabel3').innerText = 'सामान्य प्रश्न (FAQs)';
+
+                // Panel 0: Terms
+                document.getElementById('tHead').innerText = 'सेवा की शर्तें एवं दिशा-निर्देश';
+                document.getElementById('tSub').innerText = 'नियम, सेवा दायरा, उपयोगकर्ता जिम्मेदारियां व दस्तावेज मानक';
+                document.getElementById('tBadge').innerText = 'आधिकारिक नियम';
+                document.getElementById('tTitle1').innerText = '📜 शर्तों की स्वीकृति, आयु पात्रता एवं उपयोग';
+                document.getElementById('tBody1').innerText = 'ऑनलाइन साइबर कैफे मोबाइल एप्लिकेशन का उपयोग करके, आप इन सेवा शर्तों का अनुपालन करने के लिए सहमत होते हैं। उपयोगकर्ताओं की आयु कम से कम 13 वर्ष होनी चाहिए। नाबालिग उपयोगकर्ताओं (18 वर्ष से कम) के लिए माता-पिता की अनुमति अनिवार्य है।';
+
+                document.getElementById('tTitle2').innerText = '📑 डिजिटल सुविधा सेवाओं का दायरा';
+                document.getElementById('tBody2').innerText = `हम उपयोगकर्ता के अनुरोध पर आधिकारिक पोर्टलों पर आवेदन भरते हैं। एक बार आवेदन जमा हो जाने के बाद आगे की प्रक्रिया संबंधित विभागों के अधिकार क्षेत्र में होती है।
+
+• उपलब्ध सेवाएं: नया पैन कार्ड, आधार अपॉइंटमेंट, आय/जाति/मूल निवास प्रमाण पत्र, वोटर आईडी, ड्राइविंग लाइसेंस, एचएसआरपी प्लेट, पीएफ क्लेम, टिकट बुकिंग व नौकरी आवेदन।`;
+
+                document.getElementById('tTitle3').innerText = '👤 उपयोगकर्ता जिम्मेदारियां व सत्यापन';
+                document.getElementById('tBody3').innerText = 'उपयोगकर्ता अपने लॉगिन क्रेडेंशियल गोपनीय रखने के लिए जिम्मेदार हैं। गलत या फर्जी दस्तावेज जमा करने पर बिना रिफंड के आवेदन रद्द कर दिया जाएगा।';
+
+                document.getElementById('tTitle4').innerText = '🏷️ मूल्य निर्धारण त्रुटियां एवं ऑर्डर अस्वीकृति';
+                document.getElementById('tBody4').innerText = 'भुगतान प्राप्त होने के बाद भी मूल्य निर्धारण में त्रुटि सुधारने व संदिग्ध ऑर्डर रद्द करने का अधिकार हमारे पास सुरक्षित है।';
+
+                document.getElementById('tTitle5').innerText = '📱 ऐप स्टोर एवं प्ले स्टोर लाइसेंस की शर्तें';
+                document.getElementById('tBody5').innerText = 'गूगल प्ले स्टोर एवं एप्पल ऐप स्टोर की वितरक शर्तों के अनुसार मोबाइल उपकरणों पर ऐप का सीमित उपयोग अधिकार दिया जाता है।';
+
+                document.getElementById('tTitle6').innerText = '🏛️ प्राधिकरण एवं पोर्टल स्वीकृति अस्वीकरण';
+                document.getElementById('tBody6').innerText = 'आवेदन स्वीकृति, समय सीमा व अनुमोदन संबंधित आधिकारिक पोर्टल पर निर्भर करता है।';
+
+                document.getElementById('tTitle7').innerText = '⚖️ बौद्धिक संपदा व एंटी-स्क्रैपिंग चेतावनी';
+                document.getElementById('tBody7').innerText = 'सभी ऐप लोगो, यूआई डिज़ाइन, सोर्स कोड और ब्रांड संपत्ति भारतीय इनोवेटर्स के हैं। बिना अनुमति के कॉपी करना कानूनन अपराध है।';
+
+                document.getElementById('tTitle8').innerText = '📄 दस्तावेज अपलोड गुणवत्ता मानक';
+                document.getElementById('tBody8').innerText = '• स्वीकृत प्रारूप: जेपीजी, पीएनजी या पीडीएफ फाइलें (अधिकतम 5MB)। फोटो साफ व बिना कटी होनी चाहिए।';
+
+                document.getElementById('tTitle9').innerText = '📞 सत्यापन एजेंट कॉल प्रोटोकॉल';
+                document.getElementById('tBody9').innerText = 'हमारे एजेंट आपके द्वारा चुने गए समय स्लॉट में आपके मोबाइल नंबर पर संपर्क करेंगे।';
+
+                document.getElementById('tTitle10').innerText = '✍️ इलेक्ट्रॉनिक संचार एवं अनुबंध';
+                document.getElementById('tBody10').innerText = 'ऑनलाइन फॉर्म भरना और ईमेल भेजना इलेक्ट्रॉनिक संचार माना जाता है जो लिखित अनुबंध के रूप में मान्य है।';
+
+                document.getElementById('tTitle11').innerText = '📊 लाइव आवेदन अपडेट एवं अलर्ट';
+                document.getElementById('tBody11').innerText = 'ऐप में एजेंटों द्वारा अपडेट की गई स्थिति मिलती है। आधिकारिक पावती रसीदें पोर्टल्स द्वारा सीधे दी जाती हैं।';
+
+                document.getElementById('tTitle12').innerText = '🏢 कॉर्पोरेट इकाई एवं कानूनी क्षेत्राधिकार';
+                document.getElementById('tBody12').innerText = '• ऑपरेटिंग इकाई: भारतीय इनोवेटर्स (गाजियाबाद, उत्तर प्रदेश, भारत)। विवादों का क्षेत्राधिकार गाजियाबाद अदालतों के अधीन होगा।';
+
+                // Panel 1: Privacy
+                document.getElementById('pHead').innerText = 'गोपनीयता नीति एवं डेटा सुरक्षा';
+                document.getElementById('pSub').innerText = '256-बिट एन्क्रिप्शन, डेटा संग्रहण, स्वचालित विलोपन व गोपनीयता';
+                document.getElementById('pBadge').innerText = '256-बिट एन्क्रिप्टेड';
+                document.getElementById('pTitle0').innerText = '👋 स्वागत एवं गोपनीयता नीति का दायरा';
+                document.getElementById('pBody0').innerText = 'ऑनलाइन साइबर कैफे में आपका स्वागत है। हम आपकी गोपनीयता का सम्मान करते हैं और डेटा सुरक्षा के लिए पारदर्शी नीतियां अपनाते हैं।';
+
+                document.getElementById('pTitle1').innerText = '📥 सूचना का संग्रह';
+                document.getElementById('pBody1').innerText = 'हम केवल स्वेच्छा से प्रदान की गई जानकारी (नाम, मोबाइल, ईमेल, आधार/पैन) एकत्र करते हैं।';
+
+                document.getElementById('pTitle2').innerText = '💻 स्वचालित तकनीकी डेटा संग्रह';
+                document.getElementById('pBody2').innerText = 'डिवाइस आईपी, मॉडल, ऑपरेटिंग सिस्टम व क्रैश लॉग सुरक्षा के लिए दर्ज किए जाते हैं।';
+
+                document.getElementById('pTitle3').innerText = '🔐 256-बिट एईएस एन्क्रिप्शन एवं सुरक्षा';
+                document.getElementById('pBody3').innerText = 'हमारा क्लाउड इंफ्रास्ट्रक्चर (गूगल फायरबेस) आपके डेटा को एईएस-256 बैंक-ग्रेड एन्क्रिप्शन से सुरक्षित रखता है।';
+
+                document.getElementById('pTitle4').innerText = '🛡️ डेटा गोपनीयता प्रतिबद्धता';
+                document.getElementById('pBody4').innerText = 'हम आपका डेटा किसी तीसरे पक्ष को कभी नहीं बेचते या साझा नहीं करते हैं।';
+
+                document.getElementById('pTitle5').innerText = '⏱️ स्वचालित 3-महीने का दस्तावेज विलोपन';
+                document.getElementById('pBody5').innerText = 'सभी अपलोड की गई फाइलें 3 महीने बाद स्वचालित रूप से हटा दी जाती हैं।';
+
+                document.getElementById('pTitle6').innerText = '✋ खाता विलोपन नियंत्रण';
+                document.getElementById('pBody6').innerText = 'खाता हटाने के लिए हमारी सहायता टीम से bhartiyainnovators@gmail.com पर संपर्क करें।';
+
+                // Panel 2: Refund
+                document.getElementById('rHead').innerText = 'रिफंड एवं रद्दीकरण नीति';
+                document.getElementById('rSub').innerText = '12 घंटे की सीमा, कटौती सूत्र एवं गेटवे नियम';
+                document.getElementById('rBadge').innerText = '12 घंटे की सीमा';
+                document.getElementById('rTitle1').innerText = '🕒 12-घंटे की रद्दीकरण पात्रता';
+                document.getElementById('rBody1').innerText = 'सामान्य आवेदनों का रद्दीकरण खरीद के 12 घंटे के भीतर या पहली कॉल प्रयास से पहले किया जा सकता है।';
+
+                document.getElementById('rTitle2').innerText = '📊 पहली कॉल प्रयास से पहले कटौती';
+                document.getElementById('rFormula1').innerText = 'कटौती सूत्र: आवेदन शुल्क का 25% या ₹30 (जो भी अधिक हो)।';
+                document.getElementById('rBody2').innerText = 'उदाहरण: ₹100 शुल्क पर ₹30 कटौती; ₹200 शुल्क पर ₹50 कटौती।';
+
+                document.getElementById('rTitle3').innerText = '📞 दूसरे कॉल प्रयास पर कटौती';
+                document.getElementById('rFormula2').innerText = 'कटौती सूत्र: आवेदन शुल्क का 50% या ₹40 (जो भी अधिक हो)।';
+                document.getElementById('rBody3').innerText = 'उदाहरण: ₹100 शुल्क पर ₹50 कटौती।';
+
+                document.getElementById('rTitle4').innerText = '🚫 आवेदन दाखिल करने के बाद';
+                document.getElementById('rBody4').innerText = 'पोर्टल पर फॉर्म जमा होने के बाद 100% कटौती (0% रिफंड) लागू होती है।';
+
+                document.getElementById('rTitle5').innerText = '💳 पेमेंट गेटवे शुल्क (गैर-रिफंडेबल)';
+                document.getElementById('rBody5').innerText = '2.5%+ पेमेंट गेटवे शुल्क पूरी तरह गैर-रिफंडेबल होता है।';
+
+                document.getElementById('rTitle6').innerText = '⚡ त्वरित (इन्स्टेंट) आवेदन';
+                document.getElementById('rBody6').innerText = 'त्वरित आवेदन 100% गैर-रिफंडेबल होते हैं।';
+
+                document.getElementById('rTitle7').innerText = '🔄 पुन: दाखिल करने की नीति';
+                document.getElementById('rBody7').innerText = 'पुन: आवेदन के लिए नया फॉर्म जमा करना होगा।';
+
+                document.getElementById('rTitle8').innerText = '💳 रिफंड की समय सीमा';
+                document.getElementById('rBody8').innerText = 'कटौती लागू करने के बाद 12 से 24 कार्य घंटों में रिफंड शुरू होता है।';
+
+                // Panel 3: ALL 23 FAQS (Hindi)
+                document.getElementById('fHead').innerText = 'सामान्य प्रश्न (Frequently Asked Questions)';
+                document.getElementById('fSub').innerText = 'सभी 23+ सेवाओं, भुगतान, दस्तावेज व सत्यापन से जुड़े प्रश्नों के उत्तर';
+                document.getElementById('fBadge').innerText = '23+ प्रश्नोत्तर';
+
+                if(document.getElementById('fqQ1')) document.getElementById('fqQ1').innerText = '❓ 1. कॉल मिस होने पर क्या होता है?';
+                if(document.getElementById('fqA1')) document.getElementById('fqA1').innerText = 'हमारे एजेंट आपके चुने गए समय स्लॉट में संपर्क करेंगे। कॉल मिस होने पर आप सपोर्ट सेक्शन से फिर से कॉल बैक रिक्वेस्ट भेज सकते हैं।';
+
+                if(document.getElementById('fqQ2')) document.getElementById('fqQ2').innerText = '📊 2. सामान्य आवेदन रद्द कैसे करें व रिफंड नियम क्या हैं?';
+                if(document.getElementById('fqA2')) document.getElementById('fqA2').innerText = '12 घंटे के भीतर रद्दीकरण पर 25% या ₹30 (जो अधिक हो) काटा जाता है और शेष राशि 12-24 घंटों में रिफंड की जाती है।';
+
+                if(document.getElementById('fqQ3')) document.getElementById('fqQ3').innerText = '📞 3. क्या रद्दीकरण के लिए एजेंट कॉल अनिवार्य है?';
+                if(document.getElementById('fqA3')) document.getElementById('fqA3').innerText = 'नहीं, सीधे उपयोगकर्ता द्वारा रद्दीकरण का अनुरोध करने पर इसे नियमों के अनुसार संसाधित किया जाता है।';
+
+                if(document.getElementById('fqQ4')) document.getElementById('fqQ4').innerText = '⚡ 4. त्वरित (इन्स्टेंट) आवेदनों की रिफंड नीति क्या है?';
+                if(document.getElementById('fqA4')) document.getElementById('fqA4').innerText = 'त्वरित आवेदन 100% गैर-रिफंडेबल होते हैं क्योंकि इनमें तुरंत समर्पित एजेंट आवंटित किए जाते हैं।';
+
+                if(document.getElementById('fqQ5')) document.getElementById('fqQ5').innerText = '⏱️ 5. स्वीकृत रिफंड कितने समय में मिलता है?';
+                if(document.getElementById('fqA5')) document.getElementById('fqA5').innerText = 'स्वीकृत रिफंड 12 से 24 कार्य घंटों के भीतर जारी कर दिया जाता है।';
+
+                if(document.getElementById('fqQ6')) document.getElementById('fqQ6').innerText = '📝 6. रद्दीकरण का अनुरोध अभी कैसे करें?';
+                if(document.getElementById('fqA6')) document.getElementById('fqA6').innerText = 'ऐप में \'Request a Call Back\' जमा करें या bhartiyainnovators@gmail.com पर ईमेल करें।';
+
+                if(document.getElementById('fqQ7')) document.getElementById('fqQ7').innerText = '🔐 7. फॉर्म भरते समय ओटीपी क्यों मांगा जाता है?';
+                if(document.getElementById('fqA7')) document.getElementById('fqA7').innerText = 'आधिकारिक पोर्टल आपकी पहचान सत्यापित करने के लिए ओटीपी भेजते हैं जिसे फाइलिंग के लिए साझा करना अनिवार्य है।';
+
+                if(document.getElementById('fqQ8')) document.getElementById('fqQ8').innerText = '🛡️ 8. क्या ओटीपी साझा करना सुरक्षित है?';
+                if(document.getElementById('fqA8')) document.getElementById('fqA8').innerText = 'हां, एजेंट केवल आधिकारिक पोर्टल ओटीपी मांगते हैं। जल्द ही इन-ऐप सुरक्षित ओटीपी जमा सुविधा भी उपलब्ध होगी।';
+
+                if(document.getElementById('fqQ9')) document.getElementById('fqQ9').innerText = '📱 9. आवेदन की स्थिति लाइव कैसे ट्रैक करें?';
+                if(document.getElementById('fqA9')) document.getElementById('fqA9').innerText = 'ऐप में \'Applications\' टैब खोलें जहाँ प्रत्येक आवेदन की लाइव स्थिति दिखती है।';
+
+                if(document.getElementById('fqQ10')) document.getElementById('fqQ10').innerText = '💳 10. क्या पेमेंट गेटवे शुल्क रिफंडेबल है?';
+                if(document.getElementById('fqA10')) document.getElementById('fqA10').innerText = '2.5%+ पेमेंट गेटवे शुल्क पूरी तरह गैर-रिफंडेबल होता है।';
+
+                if(document.getElementById('fqQ11')) document.getElementById('fqQ11').innerText = '🏧 11. कौन से भुगतान तरीके स्वीकार किए जाते हैं?';
+                if(document.getElementById('fqA11')) document.getElementById('fqA11').innerText = 'यूपीआई (GPay, PhonePe, Paytm, BHIM), नेट बैंकिंग, कार्ड और डिजिटल वॉलेट स्वीकार किए जाते हैं।';
+
+                if(document.getElementById('fqQ12')) document.getElementById('fqQ12').innerText = '🏷️ 12. ऑनलाइन साइबर कैफे पर सेवा शुल्क कितना है?';
+                if(document.getElementById('fqA12')) document.getElementById('fqA12').innerText = 'व्यावसायिक सेवा शुल्क केवल ₹49 प्रति आवेदन से शुरू होता है (विभागीय शुल्क अलग)।';
+
+                if(document.getElementById('fqQ13')) document.getElementById('fqQ13').innerText = '🧮 13. रद्दीकरण कटौती की गणना कैसे होती है (25% बनाम ₹30)?';
+                if(document.getElementById('fqA13')) document.getElementById('fqA13').innerText = '12 घंटे में रद्दीकरण पर 25% या ₹30 (जो अधिक हो) काटा जाता है और शेष राशि रिफंड की जाती है।';
+
+                if(document.getElementById('fqQ14')) document.getElementById('fqQ14').innerText = '⚠️ 14. भुगतान विफल होने पर पैसे कट जाएं तो क्या करें?';
+                if(document.getElementById('fqA14')) document.getElementById('fqA14').innerText = 'विफल भुगतान स्वचालित रूप से 3-5 कार्य दिवसों में आपके बैंक खाते में वापस आ जाते हैं।';
+
+                if(document.getElementById('fqQ15')) document.getElementById('fqQ15').innerText = '🏛️ 15. क्या आधिकारिक विभागीय शुल्क रिफंडेबल होता है?';
+                if(document.getElementById('fqA15')) document.getElementById('fqA15').innerText = 'पोर्टल पर फॉर्म जमा होने के बाद विभागीय शुल्क गैर-रिफंडेबल हो जाता है।';
+
+                if(document.getElementById('fqQ16')) document.getElementById('fqQ16').innerText = '📄 16. कौन से दस्तावेज संलग्न करने होते हैं?';
+                if(document.getElementById('fqA16')) document.getElementById('fqA16').innerText = 'संबंधित सेवा के अनुसार आधार, पैन, फोटो, मार्कशीट आदि अधिकतम 5MB की जेपीजी, पीएनजी या पीडीएफ फाइल में अपलोड करें।';
+
+                if(document.getElementById('fqQ17')) document.getElementById('fqQ17').innerText = '⏱️ 17. दस्तावेज कितने समय तक संग्रहीत रहते हैं?';
+                if(document.getElementById('fqA17')) document.getElementById('fqA17').innerText = 'सभी संलग्न दस्तावेज 3 महीने बाद स्वचालित रूप से हटा दिए जाते हैं।';
+
+                if(document.getElementById('fqQ18')) document.getElementById('fqQ18').innerText = '🔒 18. मेरा व्यक्तिगत डेटा कैसे उपयोग होता है?';
+                if(document.getElementById('fqA18')) document.getElementById('fqA18').innerText = 'डेटा केवल आपके आवेदन पत्र भरने के लिए उपयोग किया जाता है। यह 256-बिट एईएस एन्क्रिप्टेड है।';
+
+                if(document.getElementById('fqQ19')) document.getElementById('fqQ19').innerText = '🆕 19. ₹49 में कौन सी नई सेवाएं उपलब्ध हैं?';
+                if(document.getElementById('fqA19')) document.getElementById('fqA19').innerText = 'नया पैन कार्ड, ड्राइविंग लाइसेंस, पासपोर्ट, आधार अपॉइंटमेंट, राशन कार्ड आदि।';
+
+                if(document.getElementById('fqQ20')) document.getElementById('fqQ20').innerText = '✏️ 20. कौन सी सुधार सेवाएं उपलब्ध हैं?';
+                if(document.getElementById('fqA20')) document.getElementById('fqA20').innerText = 'पैन कार्ड सुधार, आधार सुधार अपॉइंटमेंट, राशन कार्ड संशोधन आदि।';
+
+                if(document.getElementById('fqQ21')) document.getElementById('fqQ21').innerText = '🚆 21. कौन सी टिकट बुकिंग सेवाएं उपलब्ध हैं?';
+                if(document.getElementById('fqA21')) document.getElementById('fqA21').innerText = 'ट्रेन (1AC, 2AC, 3A, SL, 2S, CC, UR), फ्लाइट और बस टिकट बुकिंग सेवाएं।';
+
+                if(document.getElementById('fqQ22')) document.getElementById('fqQ22').innerText = '🎓 22. क्या प्रवेश परीक्षा व नौकरी फॉर्म भरे जा सकते हैं?';
+                if(document.getElementById('fqA22')) document.getElementById('fqA22').innerText = 'हां! एसएससी, यूपीएससी, प्रवेश परीक्षा, इग्नू/एनआईओएस, चालान, एचएसआरपी व पीएफ सेवाएं।';
+
+                if(document.getElementById('fqQ23')) document.getElementById('fqQ23').innerText = '📞 23. कॉल बैक में देरी क्यों होती है?';
+                if(document.getElementById('fqA23')) document.getElementById('fqA23').innerText = 'उच्च कॉल मात्रा के कारण देरी हो सकती है। एजेंट आपके समय स्लॉट में संपर्क करेंगे या ईमेल करें।';
+
+                document.getElementById('footHead').innerText = '🎧 क्या हमारी नीतियों के बारे में आपके कोई प्रश्न हैं?';
+                document.getElementById('footSub').innerText = 'हमारी सहायता डेस्क आपकी सहायता के लिए सोमवार से शनिवार (सुबह 9 बजे से शाम 8 बजे तक) उपलब्ध है।';
+
+            } else {
+                // REVERT TO ENGLISH
+                document.getElementById('heroTitle').innerText = 'Legal Trust & Transparent Policies';
+                document.getElementById('heroSubtitle').innerText = 'Online Cyber Cafe ensures 256-bit encrypted data protection, transparent digital processing, and clear refund & cancellation rules.';
+                document.getElementById('effectiveDateTag').innerText = '📅 Effective Date: 8th November, 2026 (Deepawali) | Version 1.0.0';
+                document.getElementById('badge1').innerText = '🔒 256-Bit Encrypted';
+                document.getElementById('badge2').innerText = '⚡ Standard 12-Hr Rules';
+                document.getElementById('badge3').innerText = '🛡️ Authorised Facilitator';
+
+                document.getElementById('tabLabel0').innerText = 'Terms & Guidelines';
+                document.getElementById('tabLabel1').innerText = 'Privacy & Security';
+                document.getElementById('tabLabel2').innerText = 'Refund & Cancellation';
+                document.getElementById('tabLabel3').innerText = 'FAQs & Help Desk';
+
+                document.getElementById('tHead').innerText = 'Terms of Service & Guidelines';
+                document.getElementById('tSub').innerText = 'Rules, service scope, user responsibilities, document standards & legal jurisdiction';
+                document.getElementById('tBadge').innerText = 'Official Rules';
+                document.getElementById('tTitle1').innerText = '📜 Acceptance of Terms, Age Eligibility & Usage';
+                document.getElementById('tBody1').innerText = 'By accessing or using the Online Cyber Cafe mobile application, you agree to comply with and be bound by these service terms. Users must be at least 13 years of age. All users who are minors (under 18) must have direct permission and supervision from a parent or legal guardian to use our services.';
+
+                document.getElementById('tTitle2').innerText = '📑 Scope of Digital Facilitation Services';
+                document.getElementById('tBody2').innerText = `We apply and file applications on official destination or third-party portals based on user requests. Once submitted, all subsequent tasks, background verification, processing, and decision procedures are handled by the respective authorities.
+
+• Active Available Services:
+  - PAN Card creation & corrections
+  - Aadhaar details & mobile link appointment booking
+  - Income, Caste, Domicile & EWS Certificates
+  - Voter ID, Driving License & HSRP Plate applications
+  - EPFO / PF balance, KYC & withdrawal form filing
+  - Train, Flight, Bus bookings & Traffic Challans
+  - School/College, IGNOU, NIOS & Job Application submission`;
+
+                document.getElementById('tTitle3').innerText = '👤 User Responsibilities, Passwords & Verification';
+                document.getElementById('tBody3').innerText = '• Credentials Security: Users agree to keep login passwords and passcodes confidential and are solely responsible for all account activity.\n• Data Correctness: Online Cyber Cafe has no administrative method, database access, or legal authority to verify or validate personal user data. Users are requested to provide accurate, truthful details and documents.\n• Input Forwarding: We collect user inputs and forward/upload them to the related portal or authority for next steps.\n• Zero Tolerance for Fraud: Submitting fake, altered, or fraudulent data will lead to immediate account suspension and application cancellation without refund.';
+
+                document.getElementById('tTitle4').innerText = '🏷️ Pricing Errors & Order Refusal Right';
+                document.getElementById('tBody4').innerText = 'We reserve the right to correct pricing errors, typographical mistakes, or billing glitches even after payment is received, and reserve the right to refuse or cancel suspicious orders placed through the app.';
+
+                document.getElementById('tTitle5').innerText = '📱 App Store & Google Play License Terms';
+                document.getElementById('tBody5').innerText = 'Granted a revocable, non-exclusive license to install and use the app on mobile devices strictly in accordance with Google Play & Apple App Store distributor terms.';
+
+                document.getElementById('tTitle6').innerText = '🏛️ Authority & Portal Approval Disclaimer';
+                document.getElementById('tBody6').innerText = 'Online Cyber Cafe is an independent technology facilitation platform. Application acceptance, rejection, processing timelines, and final approvals depend entirely on the respective authority or portal related to the user\'s filed application.';
+
+                document.getElementById('tTitle7').innerText = '⚖️ Intellectual Property, Anti-Scraping & Legal Action';
+                document.getElementById('tBody7').innerText = 'All app logos, UI designs, brand assets, source code, and trademarks belong exclusively to Bharatiya Innovators. Any unauthorized copying, reverse engineering, scraping, automated bot submission, or misuse will subject violators to civil and criminal legal action under applicable laws.';
+
+                document.getElementById('tTitle8').innerText = '📄 Document Upload Quality Standards';
+                document.getElementById('tBody8').innerText = '• Accepted Formats: JPEG, PNG, or PDF files up to 5MB per attachment.\n• Clarity: Scans or photos must be well-lit, uncropped, with all four corners visible.\n• Unencrypted Files: PDF files must be unencrypted or password provided in order notes.';
+
+                document.getElementById('tTitle9').innerText = '📞 Verification Agent Call Protocol';
+                document.getElementById('tBody9').innerText = 'Our support agent connects with you on your mobile phone during your chosen call time slot (e.g. Morning 10 AM - 2 PM or Afternoon 2 PM - 6 PM) to verify details and complete official portal form filling.';
+
+                document.getElementById('tTitle10').innerText = '✍️ Electronic Communications, Contracts & Signatures';
+                document.getElementById('tBody10').innerText = 'Visiting the app, sending emails, and completing online forms constitute electronic communications. Users consent to receive electronic disclosures and agree that orders, contracts, and electronic signatures satisfy all legal requirements for written notice.';
+
+                document.getElementById('tTitle11').innerText = '📊 Live Application Updates & Push Alerts';
+                document.getElementById('tBody11').innerText = 'Users receive application status updates filed internally by our agents within our app. Official portal status and acknowledgement updates are provided directly by respective portals.';
+
+                document.getElementById('tTitle12').innerText = '🏢 Corporate Entity & Legal Jurisdiction';
+                document.getElementById('tBody12').innerText = '• Operating Entity: Bharatiya Innovators (formerly New Gen CyberCafe)\n• Digital Platform: Online Cyber Cafe Digital Services\n• Registered Location: Ghaziabad, Uttar Pradesh, India\n• Governing Law: Governed by the laws of India; courts of Ghaziabad, Uttar Pradesh shall have exclusive jurisdiction.';
+
+                document.getElementById('pHead').innerText = 'Privacy Policy & Data Security';
+                document.getElementById('pSub').innerText = '256-bit encryption, data storage, auto-deletion & privacy controls';
+                document.getElementById('pBadge').innerText = '256-Bit Encrypted';
+                document.getElementById('pTitle0').innerText = '👋 Welcome & Scope of Privacy Policy';
+                document.getElementById('pBody0').innerText = 'Welcome to Online Cyber Cafe ("App", "we", "us", or "our"), developed and operated by Bharatiya Innovators. We value your privacy and aim to be completely transparent about how information is handled when you use our Android application.';
+
+                document.getElementById('pTitle1').innerText = '📥 Information Collection';
+                document.getElementById('pBody1').innerText = 'We collect personal information that you disclose to us including Name, Mobile Number, Email, Address, Date of Birth, Aadhaar/PAN details, scanned ID documents, photo files, and transaction IDs exclusively for filing your requested applications.';
+
+                document.getElementById('pTitle2').innerText = '💻 Technical & Device Data Automatically Collected';
+                document.getElementById('pBody2').innerText = 'Device IP address, browser/device model, operating system, system crash logs, and FCM push notification tokens are automatically recorded in log files for app diagnostics, security, and performance.';
+
+                document.getElementById('pTitle3').innerText = '🔐 256-Bit AES Encryption & Cloud Security';
+                document.getElementById('pBody3').innerText = '• Built-in Bank-Grade Security: Our cloud infrastructure (Firebase Cloud Storage & Firestore) automatically encrypts all stored user data at rest using bank-grade AES-256 encryption and TLS/SSL in transit.\n• Authorized Access Only: Access is strictly restricted to authorized application processing specialists.\n• Zero Raw Card Storage: All payment card/UPI transactions are processed directly by certified payment gateways with zero raw card data stored on our servers.';
+
+                document.getElementById('pTitle4').innerText = '🛡️ Non-Disclosure & Privacy Commitment';
+                document.getElementById('pBody4').innerText = 'We NEVER sell, rent, trade, or share your personal data with third-party advertisers or marketing agencies. Information is transmitted solely to official destination portals (UIDAI, NSDL, e-District, Parivahan, etc.).';
+
+                document.getElementById('pTitle5').innerText = '⏱️ Automatic 3-Month Document Deletion & Extended Retention';
+                document.getElementById('pBody5').innerText = 'Due to official authority portal timelines (which can sometimes exceed 90 days), application records and uploaded files are retained during active processing and archived to allow receipt re-downloading. All attached files and scanned documents are automatically deleted after 3 months. Essential financial logs are maintained up to 12 months for tax and legal compliance.';
+
+                document.getElementById('pTitle6').innerText = '✋ User Privacy Control & Account Deletion';
+                document.getElementById('pBody6').innerText = 'You can request profile updates or account data removal/termination anytime by contacting our support desk at bhartiyainnovators@gmail.com.';
+
+                document.getElementById('rHead').innerText = 'Refund & Cancellation Policy';
+                document.getElementById('rSub').innerText = '12-hour eligibility window, deduction formulas & gateway terms';
+                document.getElementById('rBadge').innerText = '12-Hr Window';
+                document.getElementById('rTitle1').innerText = '🕒 12-Hour Cancellation Eligibility Window';
+                document.getElementById('rBody1').innerText = 'Standard (Normal) Application cancellation is eligible "before 12 hours from purchase OR before our agent\'s 1st call attempt, whichever is earlier."';
+
+                document.getElementById('rTitle2').innerText = '📊 Pre-Filing / 1st Agent Call Attempt Deduction';
+                document.getElementById('rFormula1').innerText = 'Formula: 25% of application fee OR ₹30, whichever is HIGHER.';
+                document.getElementById('rBody2').innerText = '• Example 1 (₹100 Application Fee): 25% of ₹100 is ₹25, but ₹30 is higher, so ₹30 is deducted and ₹70 is refunded.\n• Example 2 (₹200 Application Fee): 25% of ₹200 is ₹50 (which is higher than ₹30), so ₹50 is deducted and ₹150 is refunded.';
+
+                document.getElementById('rTitle3').innerText = '📞 2nd Agent Call Attempt Deduction';
+                document.getElementById('rFormula2').innerText = 'Formula: 50% of application fee OR ₹40, whichever is HIGHER.';
+                document.getElementById('rBody3').innerText = '• Example (₹100 Application Fee): 50% of ₹100 is ₹50 (higher than ₹40), so ₹50 is deducted and ₹50 is refunded.';
+
+                document.getElementById('rTitle4').innerText = '🚫 Post-Filing Policy (After Application Uploaded to Portal)';
+                document.getElementById('rBody4').innerText = 'Once an application has been processed and submitted to official destination, entrance exam, or university servers, official organization fees become non-refundable (100% deduction - 0% refund) as official servers do not issue reversals.';
+
+                document.getElementById('rTitle5').innerText = '💳 Payment Gateway Processing Fee (Non-Refundable)';
+                document.getElementById('rBody5').innerText = 'An additional payment processing charge starting at 2.5% (or higher depending on payment gateway/method) is added to each transaction. This fee is strictly non-refundable under any circumstances, even if an application is cancelled or refunded.';
+
+                document.getElementById('rTitle6').innerText = '⚡ Instant Applications (Non-Refundable)';
+                document.getElementById('rBody6').innerText = 'Instant applications align dedicated processing agents immediately on an urgent basis. This incurs higher operational cost and leads to 100% NO REFUND once purchase is completed.';
+
+                document.getElementById('rTitle7').innerText = '🔄 Application Re-filing Policy';
+                document.getElementById('rBody7').innerText = 'If an application needs re-filing, a new application form must be submitted. Users can request a fee waiver or discount by emailing support, subject to operational review.';
+
+                document.getElementById('rTitle8').innerText = '💳 Refund Timelines & Processing';
+                document.getElementById('rBody8').innerText = 'We initiate refunds within 12 to 24 working hours after applying cancellation fee deductions. Final credit reflection in your account may take longer due to bank servers or payment gateway processing.';
+
+                document.getElementById('fHead').innerText = 'Frequently Asked Questions';
+                document.getElementById('fSub').innerText = 'Complete answers to all 23+ service, payment, document & verification queries';
+                document.getElementById('fBadge').innerText = '23+ Q&A';
+
+                if(document.getElementById('fqQ1')) document.getElementById('fqQ1').innerText = '❓ 1. What happens if I miss calls from your verification agent?';
+                if(document.getElementById('fqA1')) document.getElementById('fqA1').innerText = 'Our verification agent will contact your mobile number during your selected time slot to verify details and complete application filing. If you miss a call or need assistance, you can request a callback anytime from the Support & Help section.';
+
+                if(document.getElementById('fqQ2')) document.getElementById('fqQ2').innerText = '📊 2. How do I cancel my normal application and what is the 12-hour refund policy?';
+                if(document.getElementById('fqA2')) document.getElementById('fqA2').innerText = 'For Normal Applications, you can initiate a cancellation by contacting our support team within 12 hours from purchase. Upon approval, 25% of application fees or ₹30 (whichever is bigger) is deducted, and the remaining balance plus platform fees are refunded within 12 to 24 hours.';
+
+                if(document.getElementById('fqQ3')) document.getElementById('fqQ3').innerText = '📞 3. Is an agent confirmation call mandatory for application cancellation?';
+                if(document.getElementById('fqA3')) document.getElementById('fqA3').innerText = 'No, a confirmation call from an agent is not mandatory if the cancellation was initiated directly by you. When you submit a cancellation request, it is processed directly based on your request (subject to the 12-hour window and cancellation policy).';
+
+                if(document.getElementById('fqQ4')) document.getElementById('fqQ4').innerText = '⚡ 4. What is the refund policy for Instant Applications?';
+                if(document.getElementById('fqA4')) document.getElementById('fqA4').innerText = 'For all Instant Applications, NO REFUNDS will be issued under any circumstances once purchase is completed. All instant purchases are final due to immediate dedicated agent allocation.';
+
+                if(document.getElementById('fqQ5')) document.getElementById('fqQ5').innerText = '⏱️ 5. How quickly are approved refunds processed?';
+                if(document.getElementById('fqA5')) document.getElementById('fqA5').innerText = 'Approved cancellation refunds are processed within 12 to 24 hours of filing your request. Credit reflection in your bank account depends on your payment provider.';
+
+                if(document.getElementById('fqQ6')) document.getElementById('fqQ6').innerText = '📝 6. How do I request an application cancellation right now?';
+                if(document.getElementById('fqA6')) document.getElementById('fqA6').innerText = 'Contact our support team within 12 hours by submitting a \'Request a Call Back\' in the app or emailing our support desk at bhartiyainnovators@gmail.com.';
+
+                if(document.getElementById('fqQ7')) document.getElementById('fqQ7').innerText = '🔐 7. Why am I asked to share OTPs during form filling?';
+                if(document.getElementById('fqA7')) document.getElementById('fqA7').innerText = 'Official service portals (e.g. Aadhaar, PAN, Voter ID, Exam portals) issue official OTPs to verify your identity. You must provide these OTPs to our agent to complete filing.';
+
+                if(document.getElementById('fqQ8')) document.getElementById('fqQ8').innerText = '🛡️ 8. Is it safe to share OTPs and will there be an in-app OTP feature?';
+                if(document.getElementById('fqA8')) document.getElementById('fqA8').innerText = 'Our agents only ask for official portal OTPs needed for your application. An in-app Secure OTP Submission feature will be launched soon so OTPs reach the correct destination securely without phone calls.';
+
+                if(document.getElementById('fqQ9')) document.getElementById('fqQ9').innerText = '📱 9. How do I track my application status in real-time?';
+                if(document.getElementById('fqA9')) document.getElementById('fqA9').innerText = 'Open the \'Applications\' tab in the app. Each application displays its current stage (Submitted, In Verification, Completed, Action Required) along with PID details and live updates.';
+
+                if(document.getElementById('fqQ10')) document.getElementById('fqQ10').innerText = '💳 10. Are there transaction processing fees on payments and are they refundable?';
+                if(document.getElementById('fqA10')) document.getElementById('fqA10').innerText = 'An additional payment processing charge starting at 2.5% is added to each payment to cover gateway processing. This processing fee is strictly NON-REFUNDABLE under any circumstances.';
+
+                if(document.getElementById('fqQ11')) document.getElementById('fqQ11').innerText = '🏧 11. What payment methods and cards are accepted on Online Cyber Cafe?';
+                if(document.getElementById('fqA11')) document.getElementById('fqA11').innerText = 'We accept all major INR payment modes including Visa, Mastercard, American Express, Discover, UPI (Google Pay, PhonePe, Paytm, BHIM), Net Banking across all Indian banks, and digital wallets.';
+
+                if(document.getElementById('fqQ12')) document.getElementById('fqQ12').innerText = '🏷️ 12. What are the service filing charges on Online Cyber Cafe?';
+                if(document.getElementById('fqA12')) document.getElementById('fqA12').innerText = 'Our professional service filing charges start at just ₹49 per application (excluding official department, university, or ticket fees).';
+
+                if(document.getElementById('fqQ13')) document.getElementById('fqQ13').innerText = '🧮 13. How does the cancellation charge calculation work (25% vs ₹30)?';
+                if(document.getElementById('fqA13')) document.getElementById('fqA13').innerText = 'When you cancel a Normal Application within 12 hours, 25% of application fees or ₹30 (whichever is bigger) is deducted to cover processing costs. The remaining balance plus platform fees are refunded.';
+
+                if(document.getElementById('fqQ14')) document.getElementById('fqQ14').innerText = '⚠️ 14. What happens if my payment fails but money was debited?';
+                if(document.getElementById('fqA14')) document.getElementById('fqA14').innerText = 'Failed payments are automatically detected by our payment gateway and refunded to your original bank account within 3-5 business days. You can also view transaction receipts under Profile.';
+
+                if(document.getElementById('fqQ15')) document.getElementById('fqQ15').innerText = '🏛️ 15. Are official department/organization fees refundable?';
+                if(document.getElementById('fqA15')) document.getElementById('fqA15').innerText = 'Once an application has been processed and submitted to official department, entrance exam, or university servers, official organization fees become non-refundable as official servers do not issue reversals.';
+
+                if(document.getElementById('fqQ16')) document.getElementById('fqQ16').innerText = '📄 16. What documents do I need to attach and how do I upload them?';
+                if(document.getElementById('fqA16')) document.getElementById('fqA16').innerText = 'Attach required documents for your specific application (e.g. Aadhaar Card for address proof, Voter/PAN for ID proof, Passport photo for job forms, Marksheets for admissions). Capture photos or select JPEG, PNG, or PDF files (up to 5MB) from your gallery.';
+
+                if(document.getElementById('fqQ17')) document.getElementById('fqQ17').innerText = '⏱️ 17. How long are my uploaded documents stored and can I delete them?';
+                if(document.getElementById('fqA17')) document.getElementById('fqA17').innerText = 'Attached documents are automatically deleted after 3 months (or upon completion of application processing). A manual \'Delete Attached File\' feature will also be available soon.';
+
+                if(document.getElementById('fqQ18')) document.getElementById('fqQ18').innerText = '🔒 18. Why do you collect my personal data and how is it used?';
+                if(document.getElementById('fqA18')) document.getElementById('fqA18').innerText = 'We collect details and attached documents solely for filling your official application forms on your behalf and sending real-time status updates. Your data is 256-bit AES encrypted and never shared for marketing.';
+
+                if(document.getElementById('fqQ19')) document.getElementById('fqQ19').innerText = '🆕 19. What new document services can I file for ₹49?';
+                if(document.getElementById('fqA19')) document.getElementById('fqA19').innerText = 'You can apply for New PAN Card, New Driving License, Passport, Book Aadhaar Appointment, Ration Card, etc. for a service charge starting @ ₹49 (Official fee excluded).';
+
+                if(document.getElementById('fqQ20')) document.getElementById('fqQ20').innerText = '✏️ 20. What document update services are available?';
+                if(document.getElementById('fqA20')) document.getElementById('fqA20').innerText = 'We offer PAN Card Updates, Aadhaar Correction Appointments, and Ration Card updates starting @ ₹49 service charge (Official fee excluded).';
+
+                if(document.getElementById('fqQ21')) document.getElementById('fqQ21').innerText = '🚆 21. What ticket booking services are available on the app?';
+                if(document.getElementById('fqA21')) document.getElementById('fqA21').innerText = 'Book Train Tickets (1AC, 2AC, 3A, SL, 2S, CC, UR, Jan Shatabdi), Flight Tickets (Economy, Business), and Bus Tickets starting @ ₹49 service charge (Ticket fee excluded).';
+
+                if(document.getElementById('fqQ22')) document.getElementById('fqQ22').innerText = '🎓 22. Can I apply for Job Vacancies, Entrance Exams &amp; IGNOU/NIOS Admissions?';
+                if(document.getElementById('fqA22')) document.getElementById('fqA22').innerText = 'Yes! Apply for SSC, CGL, UPSC, Public/Private Job Vacancies, School/College Admissions, Entrance Exams, IGNOU/NIOS Admissions, Online Traffic Challans, Vehicle HSRP Number Plates, EPFO (PF), and Char Dham Yatra Registrations starting @ ₹49.';
+
+                if(document.getElementById('fqQ23')) document.getElementById('fqQ23').innerText = '📞 23. Why is Call Back support experiencing delays?';
+                if(document.getElementById('fqA23')) document.getElementById('fqA23').innerText = 'Due to high call volume, Call Back support is experiencing heavy load. Our agents connect with you in your selected time slot. For urgent queries, email bhartiyainnovators@gmail.com within 12 hours.';
+
+                document.getElementById('footHead').innerText = '🎧 Have questions about our policies?';
+                document.getElementById('footSub').innerText = 'Our support desk is available Mon - Sat (9 AM - 8 PM IST) to assist you with any policy or refund queries.';
+            }
+        }
+    </script>
+</body>
+</html>
